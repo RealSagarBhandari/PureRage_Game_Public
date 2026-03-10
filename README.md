@@ -33,7 +33,7 @@ Teaser:
 
 
 
-### Still might be live: [PURE RAGE](https://turn-based-battle-fqckckgve8bsa3ha.centralus-01.azurewebsites.net/)
+### 🌐 Live Demo: Pure Rage on Azure: [PURE RAGE ON AZURE](https://turn-based-battle-fqckckgve8bsa3ha.centralus-01.azurewebsites.net/)
 
 
 ##  Overview
