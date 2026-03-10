@@ -14,6 +14,20 @@
 
 ---
 
+
+
+
+Teaser:
+
+<div align="center">
+  <video src="https://github.com/RealSagarBhandari/PureRage_Game_Public/blob/main/assets/teaser.mp4?raw=true" width="100%" autoplay muted loop></video>
+  
+  <p align="center">
+    <strong>A physics-driven 2D combat experience built with a focus on modular architecture and fluid state-management.</strong>
+  </p>
+</div>
+
+
 ##  Overview
 
 **PURE RAGE** is a dynamic, fast-paced, turn-based battle browser game. Players can register an account, choose their fighter from a diverse roster of characters, and engage in tactical 1v1 battles featuring unique abilities, rage meters, and intense visual feedback (particle effects, screen shake, and adaptive battle music). The project integrates a scalable Python/Flask backend with an interactive Vanilla JavaScript frontend, demonstrating full-stack web development principles.
