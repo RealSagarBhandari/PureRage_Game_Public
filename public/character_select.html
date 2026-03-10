@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PURE RAGE | Character Select</title>
+   <!-- Bootstrap -->
+   <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-…"
+    crossorigin="anonymous"
+  />
+
+  <link rel="stylesheet" href="../css/character_select.css" />
+  <!-- Navbar css-->
+  <link rel="stylesheet" href="../css/navbar.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  {% include "navbar-after-login.html" %}
+
+  <!--   PART 1 BACKGROUND FX   -->
+  <div class="ambient-glow"></div>
+  <div class="neon-bg"></div>
+  <div id="spark-container"></div>
+  <div id="smoke-container"></div>
+  <div class="flare fx1"></div>
+  <div class="flare fx2"></div>
+  <div class="flare fx3"></div>
+  <div id="ember-container"></div>
+  <div id="flame-container"></div>
+  <div id="particle-container"></div>
+
+  <!-- PART 2 CHARACTER SELECTION -->
+  <h1 class="game-title flicker">PURE RAGE</h1>
+  <h2 class="subtitle flicker-slow">
+    <span class="sweep-text">CHOOSE YOUR CHARACTER</span>
+    <span class="light-sweep"></span>
+  </h2>
+
+  <div class="arrow-buttons">
+    <div id="arrow-left" class="arrow dimmed">◀</div>
+    <div id="arrow-right" class="arrow dimmed">▶</div>
+  </div>
+
+  <div class="character-stage">
+    <div class="spotlight-under"></div>
+    <div id="character-grid"></div>
+  </div>
+
+  <p class="enter-tip">PRESS ENTER TO SELECT</p>
+
+  
+
+  <!-- AUDIO SETUP -->
+  <audio id="click-sfx" src="../assets/click_fx.mp3"></audio>
+  <audio id="bg-music" src="../assets/intro_music.mp3" autoplay loop></audio>
+  <audio id="voice-line" src="../assets/choose_your_character.mp3"></audio>
+
+  <!-- POPUP WINDOW CONFIGURATION  -->
+  <div id="confirm-modal" class="hidden">
+    <div class="confirm-box">
+      <button id="popup-close">✖</button>
+      <div class="confirm-left">
+        <img id="popup-img" src="" alt="Character" />
+      </div>
+      <div class="confirm-right">
+        <h2 id="popup-name"></h2>
+        <p id="popup-bio"></p>
+        <div class="stat-line">HP      : <div class="bar" id="bar-hp"></div></div>
+        <div class="stat-line">ATK    : <div class="bar" id="bar-atk"></div></div>
+        <div class="stat-line">DEF   : <div class="bar" id="bar-def"></div></div>
+        <div class="stat-line">MATK : <div class="bar" id="bar-matk"></div></div>
+        <div class="stat-line">MDEF : <div class="bar" id="bar-mdef"></div></div>
+        <button id="popup-start">🔥 START BATTLE 🔥</button>
+      </div>
+    </div>
+  </div>
+
+<!-- Additionally, for MVP only till we setup battle page. -->
+<!-- Fullscreen teaser video -->
+<video id="teaser-video" class="hidden" src="../assets/teaser.mp4" type="video/mp4"></video>
+  <script type="module" src="../js/character_select.js"></script>
+</body>
+</html>

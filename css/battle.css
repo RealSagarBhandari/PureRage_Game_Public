@@ -1,0 +1,481 @@
+body {
+  background: radial-gradient(circle at center, #0c0c0c, #000);
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+  margin: 0;
+  overflow-x: hidden;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* 🔥 Fire + Lightning FX Background */
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+
+@keyframes flicker {
+
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+
+  50% {
+    opacity: 0.25;
+  }
+}
+
+@keyframes flash {
+
+  0%,
+  100% {
+    opacity: 0.1;
+  }
+
+  30% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 0.05;
+  }
+
+  80% {
+    opacity: 0.2;
+  }
+}
+
+/* Layout */
+.battle-layout {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 60px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 40px;
+  z-index: 1;
+  position: relative;
+}
+
+/* Fighter */
+.fighter-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+.fighter-block img {
+  width: 280px;
+  height: 360px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 0 60px #ff3d00;
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+.fighter-block img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 80px #ff3d00aa, 0 0 120px #ff6e40aa;
+}
+
+.fighter-block.active-turn img {
+  outline: 4px solid #ff3d00;
+  box-shadow: 0 0 60px #ff3d00, 0 0 100px #ff6e40;
+  transition: all 0.4s ease;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 0 0 10px #ff3d00;
+  margin-top: -6px;
+}
+
+.stage-ring {
+  width: 180px;
+  height: 34px;
+  background: radial-gradient(circle, rgba(255, 61, 0, 0.3), transparent 70%);
+  border-radius: 50%;
+  margin-top: -12px;
+  filter: blur(6px);
+  animation: pulse-ring 2s ease-in-out infinite;
+}
+
+@keyframes pulse-ring {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+/* HP Bar */
+.hp-bar {
+  width: 260px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #ff3d00;
+  border-radius: 6px;
+  box-shadow: 0 0 10px #ff3d00aa;
+  overflow: hidden;
+  position: relative;
+}
+
+.hp-fill {
+  height: 100%;
+  background: linear-gradient(to right, #ff3d00, #ff6e40);
+  width: 100%;
+  box-shadow: 0 0 16px #ff3d00cc;
+  transition: width 0.5s ease-in-out;
+}
+
+.hp-fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 6px;
+  background: rgba(255, 255, 255, 0.3);
+  filter: blur(1px);
+}
+
+/* Buttons & Action Stack */
+.action-stack {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+  left: -10px;
+  z-index: 2;
+}
+
+.main-btn {
+  width: 190px;
+  height: 50px;
+  background: #ff3d00;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 20px #ff3d00aa;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-btn:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 30px #ff6e40aa;
+}
+
+/* --- Added AAA "Juice" Styles --- */
+
+/* Screen Shake */
+@keyframes shakeProjector {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+.shake {
+  animation: shakeProjector 0.3s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+/* Floating Damage Labels */
+.damage-popup {
+  position: absolute;
+  color: #ff3d00;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  pointer-events: none;
+  z-index: 9999;
+  text-shadow: 2px 2px 0px #000, 0 0 10px #ff3d00;
+  animation: floatUpFade 1s ease-out forwards;
+}
+
+@keyframes floatUpFade {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(-40px) scale(1.2);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-100px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* Low Health Flash */
+@keyframes heartBeat {
+  0% {
+    box-shadow: 0 0 10px #ff3d00aa;
+  }
+
+  50% {
+    box-shadow: 0 0 30px #ff0000;
+  }
+
+  100% {
+    box-shadow: 0 0 10px #ff3d00aa;
+  }
+}
+
+.low-health {
+  animation: heartBeat 0.8s infinite;
+  border-color: #ff0000 !important;
+}
+
+/* Custom Scrollbar for Log */
+.log-box::-webkit-scrollbar {
+  width: 6px;
+}
+
+.log-box::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.log-box::-webkit-scrollbar-thumb {
+  background: #ff3d00;
+  border-radius: 10px;
+}
+
+.skill-dropdown {
+  position: relative;
+}
+
+.skill-options {
+  position: absolute;
+  top: -10px;
+  left: 200px;
+  background: radial-gradient(circle at center, #1a1a1a, #000);
+  border: 2px solid #ff3d00;
+  border-radius: 12px;
+  box-shadow: 0 0 25px #ff3d00aa;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  z-index: 10;
+  width: 240px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.sub-btn {
+  background: #111;
+  color: #ff6e40;
+  border: 1px solid #ff6e40;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  box-shadow: 0 0 10px #ff3d00aa;
+}
+
+.sub-btn:hover {
+  background: #ff6e40;
+  color: black;
+  box-shadow: 0 0 20px #ff6e40cc;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Log Box */
+.log-box {
+  height: 280px;
+  width: 400px;
+  background: rgba(0, 0, 0, 0.65);
+  border: 2px solid #ff3d00;
+  border-radius: 14px;
+  padding: 14px;
+  overflow-y: auto;
+  font-size: 14px;
+  box-shadow: 0 0 25px #ff3d00cc;
+  margin-top: 40px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 2;
+}
+
+.log-box p {
+  margin: 0;
+  padding: 5px 6px;
+  line-height: 1.4em;
+  color: #ffffff;
+  text-shadow: 0 0 6px #ff3d00aa;
+}
+
+/* Hit FX */
+.hit-effect {
+  filter: brightness(180%) sepia(1) hue-rotate(-20deg);
+  transition: filter 0.15s ease-in-out;
+}
+
+
+.fighter-block.dead img {
+  filter: grayscale(100%) brightness(0.5);
+  opacity: 0.6;
+}
+
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-box {
+  background: #111;
+  border: 2px solid orangered;
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 0 40px orangered;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  animation: popIn 0.4s ease-out;
+}
+
+.modal-box h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 12px #ff3d00;
+}
+
+.modal-box p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+#retry-btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  background: #ff3d00;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 15px #ff3d00aa;
+  transition: 0.2s ease-in-out;
+}
+
+#retry-btn:hover {
+  background: #ff6e40;
+  box-shadow: 0 0 20px #ff6e40aa;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

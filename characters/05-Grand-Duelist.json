@@ -1,0 +1,37 @@
+{
+  "numchar": 5,
+  "health": 1200,
+  "armor": 500,
+  "magicResist": 400,
+  "attack": 600,
+  "magicPower": 400,
+  "name": "Grand Duelist",
+  "bio": "A duelist who kills not for honor, but to quiet the chaos within.",
+  "skills": [
+    {
+      "id": 1,
+      "name": "Blade Dance",
+      "description": "Deal Physical Damage to opponent equal to 70% of Attack Damage, three times."
+    },
+    {
+      "id": 2,
+      "name": "Strategic Strike",
+      "description": "Deal Physical Damage to opponent equal to (110% of Attack Damage + 150), then permanently increase Attack Damage, Magic Power, Armor, and Magic Resist by 6% (additively)."
+    },
+    {
+      "id": 3,
+      "name": "En Garde!",
+      "description": "Deal Physical Damage equal to (100% Magic Power + 120), then deal Magical Damage equal to (100% Attack Damage + 120)."
+    },
+    {
+      "id": 4,
+      "name": "Enchanted Blade",
+      "description": "Deal Magical Damage to opponent equal to (120% of Magic Power + 400)."
+    }
+  ],
+  "ultimate": {
+    "id": 5,
+    "name": "Judgement Cut",
+    "description": "Repeat 5 times: Deal Magical Damage equal to (18% of Attack Damage + 40), then Physical Damage equal to (18% of Attack Damage + 40), then permanently reduce target's Armor and Magic Resist by 5% (additively)."
+  }
+}

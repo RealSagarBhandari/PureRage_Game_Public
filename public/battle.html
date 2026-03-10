@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PURE RAGE | Battle</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet" />
+  <!-- Navbar CSS -->
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="/css/battle.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  {% include "navbar-after-login.html" %}
+
+  <!-- overlay -->
+  <div class="hud-overlay"></div>
+
+  <!-- BG FX Canvas -->
+  <canvas id="fx-canvas" style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0;"></canvas>
+
+  <div class="battle-layout">
+    <!-- Player 1 (User) -->
+    <div class="left-column">
+      <div class="fighter-block" id="player1-block">
+        <div class="hp-bar"><div class="hp-fill" id="player1-hp"></div></div>
+        <img id="player1-img" src="" alt="Player" />
+        <div class="name" id="player1-name">Player</div>
+        <div class="xp-container" style="width:200px; height:8px; background:rgba(255,255,255,0.1); border:1px solid #00d4ff; border-radius:4px; margin-top:5px; overflow:hidden;">
+          <div id="player1-xp" style="width:0%; height:100%; background:#00d4ff; transition: width 1s ease;"></div>
+        </div>
+        <div class="stage-ring"></div>
+      </div>
+
+      <div class="action-stack">
+        <button class="main-btn" id="attack-btn">Attack</button>
+        <div class="skill-dropdown">
+          <button class="main-btn" id="skill-btn">Skill</button>
+          <div class="skill-options hidden" id="skill-options">
+            <button class="sub-btn" id="skill1">Skill 1</button>
+            <button class="sub-btn" id="skill2">Skill 2</button>
+            <button class="sub-btn" id="skill3">Skill 3</button>
+            <button class="sub-btn" id="skill4">Skill 4</button>
+          </div>
+        </div>
+        <button class="main-btn" id="rage-btn">Rage</button>
+      </div>
+    </div>
+
+    <!-- Enemy Side -->
+    <div class="right-column">
+      <div class="fighter-block" id="enemy-block">
+        <div class="hp-bar"><div class="hp-fill" id="player2-hp"></div></div>
+        <img id="player2-img" src="" alt="Enemy" />
+        <div class="name" id="player2-name">Enemy</div>
+        <div class="stage-ring"></div>
+      </div>
+
+      <div class="log-box" id="battle-log">
+        Battle log needs to appear here.
+      </div>
+    </div>
+  </div>
+
+  <!-- Toggle Skill Dropdown -->
+  <script>
+    document.getElementById("skill-btn").addEventListener("click", () => {
+      document.getElementById("skill-options").classList.toggle("hidden");
+    });
+  </script>
+
+  <!-- Game Logic -->
+  <script type="module" src="/js/battle-ui.js"></script>
+
+  <!-- Victory Modal -->
+<div id="victory-modal" class="modal hidden">
+  <div class="modal-box">
+    <h2 id="victory-title">Victory!</h2>
+    <p id="victory-msg">You have defeated your opponent!</p>
+    <button id="retry-btn">🔁 Play Again</button>
+  </div>
+</div>
+
+
+ <!-- Audio -->
+ <!-- Audio -->
+    <audio id="bg-music" autoplay loop>
+      <source src="../assets/battle-audio.mp3" type="audio/mpeg" />
+    </audio>
+
+</body>
+</html>

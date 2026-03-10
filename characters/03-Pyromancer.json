@@ -1,0 +1,37 @@
+{
+  "numchar": 3,
+  "health": 1000,
+  "armor": 300,
+  "magicResist": 700,
+  "attack": 200,
+  "magicPower": 800,
+  "name": "Pyromancer",
+  "bio": "A fire-wracked zealot who laughs through the smoke, burning everything just to feel alive.",
+  "skills": [
+    {
+      "id": 1,
+      "name": "Fireball",
+      "description": "Deal Magical Damage to opponent equal to 170% of Magic Power + 50."
+    },
+    {
+      "id": 2,
+      "name": "Bombard",
+      "description": "Deal Magical Damage to opponent equal to 60% of Magic Power 5 times."
+    },
+    {
+      "id": 3,
+      "name": "Warming Flames",
+      "description": "Heal for (32% of Magic Power + 80)."
+    },
+    {
+      "id": 4,
+      "name": "Empty Slot",
+      "description": "This character has no fourth ability."
+    }
+  ],
+  "ultimate": {
+    "id": 5,
+    "name": "Inferno",
+    "description": "Deal Physical Damage to opponent equal to 240% of Magic Power, then permanently reduce the enemy's Armor and Magic Resist by 35% (additively)."
+  }
+}

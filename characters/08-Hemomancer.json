@@ -1,0 +1,37 @@
+{
+  "numchar": 8,
+  "health": 2000,
+  "armor": 300,
+  "magicResist": 400,
+  "attack": 200,
+  "magicPower": 600,
+  "name": "Hemomancer",
+  "bio": "He spills his own blood to drown the world in yours",
+  "skills": [
+    {
+      "id": 1,
+      "name": "Hemoplague",
+      "description": "Deal Magical Damage equal to (130% of Magic Power + 150), and heal for (25% of Magic Power + 20). Also applies a permanent bleed that deals 2% of target's current HP per stack as True Damage each round. Stacks infinitely."
+    },
+    {
+      "id": 2,
+      "name": "Blood Rage",
+      "description": "Heal for (10% of Magic Power + 100), then permanently increase Magic Power by 25%. Applies a permanent self-bleed that deals 2% of current HP per stack as True Damage each round. Stacks infinitely."
+    },
+    {
+      "id": 3,
+      "name": "Blood Burn",
+      "description": "Deal Physical Damage equal to (120% of Magic Power + 120 per stack of Hemoplague bleed effect on the opponent)."
+    },
+    {
+      "id": 4,
+      "name": "Empty Slot",
+      "description": "This character has no fourth ability."
+    }
+  ],
+  "ultimate": {
+    "id": 5,
+    "name": "Grand Transfusion",
+    "description": "Heal for 100 per Blood Rage stack. Then, transfer that number of stacks to the opponent as Hemoplague. All self-stacks of Blood Rage are cleared."
+  }
+}

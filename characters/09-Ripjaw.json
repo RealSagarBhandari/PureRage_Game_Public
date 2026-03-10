@@ -1,0 +1,37 @@
+{
+  "numchar": 9,
+  "health": 1400,
+  "armor": 400,
+  "magicResist": 100,
+  "attack": 900,
+  "magicPower": 400,
+  "name": "Ripjaw",
+  "bio": "A feral engine of hunger, Ripjaw exists only to feast — and in his wake, only gnawed bones remain.",
+  "skills": [
+    {
+      "id": 1,
+      "name": "Bite",
+      "description": "Deal Physical Damage equal to (160% of Attack Damage + 300 + 30% of opponent's max HP). Damage increases by 40% additively per stack of Starve. Consumes all stacks."
+    },
+    {
+      "id": 2,
+      "name": "Starve",
+      "description": "Permanently increase Attack Damage and Magic Power by 8% (additively). Gain 1 stack of Starve. Enhances other abilities and is consumed when used."
+    },
+    {
+      "id": 3,
+      "name": "Devour",
+      "description": "Deal Magical Damage equal to (120% Attack Damage + 100), and heal for (15% Magic Power + 50). Permanently increase Armor by 6% and Magic Resist by 10%. Effects scale with Starve stacks (damage +40%, heal +60%, defenses +25% per stack). Consumes all stacks."
+    },
+    {
+      "id": 4,
+      "name": "Chew",
+      "description": "Deal (36% of Attack Damage + 30) Physical Damage six times. Damage increases by 50% additively per Starve stack. Consumes all stacks."
+    }
+  ],
+  "ultimate": {
+    "id": 5,
+    "name": "Swallow",
+    "description": "If opponent's HP is below 40% of user's Attack Damage (max 800), instantly kill them. Otherwise, deal Magical Damage equal to (190% Attack Damage + 50% of opponent's lost HP), increased by 30% per Starve stack. Consumes all stacks."
+  }
+}

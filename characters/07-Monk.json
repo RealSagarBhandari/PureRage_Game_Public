@@ -1,0 +1,37 @@
+{
+  "numchar": 7,
+  "health": 1600,
+  "armor": 400,
+  "magicResist": 400,
+  "attack": 500,
+  "magicPower": 400,
+  "name": "Monk",
+  "bio": "A fallen ascetic, the Monk channels corrupted rage through sacred form, twisted into devastation.",
+  "skills": [
+    {
+      "id": 1,
+      "name": "Retaliation",
+      "description": "Enter a retaliatory stance: next round, deal back the damage received as both Physical and Magical Damage. Permanently increase Armor and Magic Resist by 8%."
+    },
+    {
+      "id": 2,
+      "name": "Qi Burst",
+      "description": "Deal Physical Damage to opponent equal to (150% of Attack Damage + 40% of target's current HP)."
+    },
+    {
+      "id": 3,
+      "name": "Energy Feedback",
+      "description": "Deal Magical Damage to opponent equal to (160% of Magic Power + 60% of target's Magic Power)."
+    },
+    {
+      "id": 4,
+      "name": "Empty Slot",
+      "description": "This character has no fourth ability."
+    }
+  ],
+  "ultimate": {
+    "id": 5,
+    "name": "Divine",
+    "description": "Permanently increase Armor, Magic Resist, Attack Damage, and Magic Power by 18%. Gain extreme Armor and Magic Resist for 2 rounds (non-stackable)."
+  }
+}

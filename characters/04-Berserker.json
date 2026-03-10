@@ -1,0 +1,37 @@
+{
+  "numchar": 4,
+  "health": 2000,
+  "armor": 100,
+  "magicResist": 300,
+  "attack": 800,
+  "magicPower": 300,
+  "name": "Berserker",
+  "bio": "A blood-drenched juggernaut who lives for the scream of metal and the snap of bone.",
+  "skills": [
+    {
+      "id": 1,
+      "name": "Rampage",
+      "description": "Deal Physical Damage to opponent equal to (140% of Attack Damage + 150), and heal for (12% of Attack Damage + 60)."
+    },
+    {
+      "id": 2,
+      "name": "Frenzy",
+      "description": "Deal Physical Damage to opponent equal to 90% of Attack Damage, then permanently additively increase Attack Damage by 16%."
+    },
+    {
+      "id": 3,
+      "name": "Berserk",
+      "description": "Permanently halve Armor and Magic Resist, double Attack Damage (non-stackable), then deal Physical Damage to opponent equal to 80% of Attack Damage."
+    },
+    {
+      "id": 4,
+      "name": "Empty Slot",
+      "description": "This character has no fourth ability."
+    }
+  ],
+  "ultimate": {
+    "id": 5,
+    "name": "Execution!",
+    "description": "Deal Physical Damage to opponent equal to (240% of Attack Damage + 500)."
+  }
+}

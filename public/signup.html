@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>PURE RAGE | Sign Up</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <!-- Navbar css-->
+    <link rel="stylesheet" href="../css/navbar.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    {% include "navbar-before-login.html" %}
+    <!-- SIGN UP FORM -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+          </div>
+          <div class="modal-body">
+            <div class="login-box" id="-box">
+              <h1 class="title flicker">PURE RAGE</h1>
+
+              <form id="registerForm" novalidate>
+                <label for="registerDisplayName">Display Name</label>
+                <input type="text" id="registerDisplayName" name="registerDisplayName" class="form-control" required />
+                
+                <label for="registerUsername">Username</label>
+                <input type="text" id="registerUsername" name="registerUsername" class="form-control" required pattern="/^[a-zA-Z0-9]{1,50}$/" />
+                <div class="invalid-feedback">Username must be alphanumeric and at most 50 characters</div>
+
+                <label for="registerPassword">Password</label>
+                <input type="password" id="registerPassword" name="registerPassword" class="form-control" required pattern="/^[\x21-\x7E]{8,}$/$" />
+                <div class="invalid-feedback">Password must be at least 8 characters and contain no whitespace</div>
+
+                <button type="submit" class="btn btn-primary">Register</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+              </form>
+
+              <div class="invalid-feedback"></div>
+              <p id="signup-message"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VISUAL EFFECTS -->
+    <div class="background-glow"></div>
+    <div id="flame-container"></div>
+    <div id="particle-container"></div>
+    <div class="navbar">
+        {% include "navbar-before-login.html" %}
+
+    </div>
+
+    <!-- AUDIO -->
+    <audio id="bg-music" autoplay loop>
+      <source src="../assets/intro_music.mp3" type="audio/mpeg" />
+    </audio>
+    <img src="../assets/boss_face.png" alt="Boss Face" id="boss-face" />
+    <button id="toggle-audio" class="audio-btn">🔊</button>
+
+    <!-- REUSE SCRIPT FOR AUDIO & EFFECTS -->
+    <script src="../js/script.js" defer></script>
+    <!-- form validation & AJAX -->
+    <script src="../js/signin.js" defer></script>
+    <!-- Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

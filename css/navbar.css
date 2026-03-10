@@ -1,0 +1,141 @@
+/*navbar.css */
+
+/* Base navbar container */
+.rage-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  border-bottom: 2px solid #ff3c00;
+  box-shadow: 0 0 20px #ff3c00;
+  z-index: 10000;
+}
+
+/* Flex wrapper */
+.rage-navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
+/* Brand (PURE RAGE) */
+.rage-navbar .brand {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 1.1rem;
+  color: #ff3c00;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+/* Single‐item nav (logout) uses .justify-content-end on the container */
+
+/* Nav‐link list */
+.rage-navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.rage-navbar .nav-links li a {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.9rem;
+  color: #f0f0f0;
+  text-decoration: none;
+  position: relative;
+  padding: 0.25rem 0;
+}
+
+.rage-navbar .nav-links li a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #ff3c00;
+  transition: width 0.2s ease-in-out;
+}
+
+.rage-navbar .nav-links li a:hover {
+  color: #ff3c00;
+}
+
+.rage-navbar .nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* Logout button */
+.logout-btn {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.8rem;
+  color: #ff3c00;
+  background: transparent;
+  border: 2px solid #ff3c00;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-transform: uppercase;
+}
+
+.logout-btn:hover {
+  background: #ff3c00;
+  color: #000;
+  box-shadow: 0 0 10px #ff3c00;
+}
+
+/* Glitch keyframes */
+@keyframes glitch {
+  0% {
+    text-shadow: 2px 2px #ff3c00;
+  }
+
+  20% {
+    text-shadow: -2px -2px #ff3c00;
+  }
+
+  40% {
+    text-shadow: 2px -2px #ff3c00;
+  }
+
+  60% {
+    text-shadow: -2px 2px #ff3c00;
+  }
+
+  80% {
+    text-shadow: 2px 2px #ff3c00;
+  }
+
+  100% {
+    text-shadow: none;
+  }
+}
+
+.glitchy {
+  animation: glitch 2s infinite;
+}
+
+/* Body padding */
+body {
+  padding-top: 60px;
+}
+
+/* override Bootstrap’s .justify-content-end *only* inside our rage-navbar 
+ * important for the character_select page, as it would otherwise cause
+ * alignment issues with the navbabr on that page
+ */
+.rage-navbar .container.justify-content-end {
+  justify-content: space-between !important;
+}
+
+/* force navbar’s .container to span the full viewport */
+.rage-navbar .container {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+}

@@ -1,0 +1,37 @@
+{
+    "numchar": 2,
+    "health": 1200,
+    "armor": 300,
+    "magicResist": 300,
+    "attack": 700,
+    "magicPower": 600,
+    "name": "Blade Mantis",
+    "bio": "An agile assassin with razor limbs, it moves unseen and kills without warning.",
+    "skills": [
+    {
+      "id": 1,
+      "name": "Murder",
+      "description": "Deal Physical Damage to opponent equal to 210% of Attack Damage + 100."
+    },
+    {
+      "id": 2,
+      "name": "Bloodthirst",
+      "description": "Deal Magical Damage to opponent equal to (120% of Attack Damage + 100), and heal for (20% of Magic Power + 50)."
+    },
+    {
+      "id": 3,
+      "name": "Twin Blades",
+      "description": "Deal Magical Damage equal to (70% of Attack Damage + 300), then deal the same amount of Physical Damage."
+    },
+    {
+      "id": 4,
+      "name": "Empty Slot",
+      "description": "This character has no fourth ability."
+    }
+  ],
+  "ultimate": {
+    "id": 5,
+    "name": "Ravage",
+    "description": "Deal Physical Damage to opponent equal to (44% of Attack Damage + 88) eight times."
+  }
+}

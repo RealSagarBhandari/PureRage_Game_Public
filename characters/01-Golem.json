@@ -1,0 +1,37 @@
+{
+  "numchar": 1,
+  "health": 1600,
+  "armor": 500,
+  "magicResist": 600,
+  "attack": 200,
+  "magicPower": 400,
+  "name": "Golem",
+  "bio": "A towering golem fueled by raw fury, it crushes anything that stands in its path.",
+  "skills": [
+    {
+      "id": 1,
+      "name": "Rock Smash",
+      "description": "Deal Physical Damage to opponent equal to 190% of Magic Power + 100."
+    },
+    {
+      "id": 2,
+      "name": "Earthquake",
+      "description": "Deal Magical Damage to opponent equal to 180% of Magic Power + 100."
+    },
+    {
+      "id": 3,
+      "name": "Shatter!",
+      "description": "Deal 550 Physical Damage, then permanently reduce the enemy's Armor and Magic Resist by 9%."
+    },
+    {
+      "id": 4,
+      "name": "Unbreaking Earth",
+      "description": "Heal for (8% of Magic Power + 8% of Attack Damage + 180)."
+    }
+  ],
+  "ultimate": {
+    "id": 5,
+    "name": "Obliteration",
+    "description": "Deal Physical Damage to opponent equal to (60% of Attack Damage + 1200)."
+  }
+}

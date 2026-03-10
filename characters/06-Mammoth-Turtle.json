@@ -1,0 +1,37 @@
+{
+  "numchar": 6,
+  "health": 1600,
+  "armor": 700,
+  "magicResist": 700,
+  "attack": 100,
+  "magicPower": 200,
+  "name": "Mammoth Turtle",
+  "bio": "A living siege engine dragging the weight of the world to crush all in its path.",
+  "skills": [
+    {
+      "id": 1,
+      "name": "Shell Smash",
+      "description": "Deal Physical Damage to opponent equal to (75% of Attack Damage + 240), then permanently reduce enemy Armor by 16%."
+    },
+    {
+      "id": 2,
+      "name": "Indestructible",
+      "description": "Double self Armor and Magic Resist (does not stack)."
+    },
+    {
+      "id": 3,
+      "name": "Armor Prioritized",
+      "description": "Permanently increase Armor by 10% and reduce Magic Resist by 6% (additively). Heal for 20 health and gain 5 Rage."
+    },
+    {
+      "id": 4,
+      "name": "Magic Resist Prioritized",
+      "description": "Permanently increase Magic Resist by 10% and reduce Armor by 6% (additively). Heal for 20 health and gain 10 Rage."
+    }
+  ],
+  "ultimate": {
+    "id": 5,
+    "name": "Supreme Regeneration",
+    "description": "Heal for (80% of Magic Power + 500) health."
+  }
+}

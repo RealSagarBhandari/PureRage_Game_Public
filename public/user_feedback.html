@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>User Feedback</title>
+
+  <!-- Custom styles -->
+  <style>
+    .feedback-wrapper {
+      width: 60%;
+      margin: 40px auto;
+    }
+    .feedback-table {
+      width: 100%;
+      border: 4px solid red;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+    .feedback-table th,
+    .feedback-table td {
+      border: 4px solid red;
+      padding: 8px;
+    }
+  </style>
+  <link rel="stylesheet" href="../css/style.css" />
+  <!-- Navbar css-->
+  <link rel="stylesheet" href="../css/navbar.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  {% include "navbar-before-login.html" %}
+
+  <div class="feedback-wrapper">
+    <h1 class="text-center mb-4">User Feedback - #PureRage</h1>
+
+    <!-- Enumerate every post in its own table
+     containing author handle, current time, and post content-->
+    {% for p in posts %}
+      <table class="feedback-table">
+        <tbody>
+          <tr>
+            <td>{{ p.author.handle }}</td>
+            <td>{{ p.indexedAt[:19].replace('T',' ') }}</td>
+          </tr>
+          <tr>
+            <td colspan="2">{{ p.record.text }}</td>
+          </tr>
+        </tbody>
+      </table>
+    {% else %}
+      <!-- If no content found or failure in program, default response-->
+      <p class="text-muted text-center">No feedback available.</p>
+    {% endfor %}
+  </div>
+  
+  <!-- AUDIO -->
+  <audio id="bg-music" autoplay loop>
+    <source src="../assets/intro_music.mp3" type="audio/mpeg" />
+  </audio>
+  <button id="toggle-audio" class="audio-btn">🔊</button>
+  <!-- Bootstrap -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoYz1Hi0GcZQK9RR+IkYF7QTAtI1Ai2Kw50n3IBm8MMKOsV"
+    crossorigin="anonymous"
+  ></script>
+  <!-- Javascript -->
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

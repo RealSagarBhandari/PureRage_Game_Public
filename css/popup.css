@@ -1,0 +1,119 @@
+#confirm-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(20, 20, 20, 0.98);
+    border: 2px solid #ff3d00;
+    box-shadow: 0 0 30px #ff3d00aa;
+    border-radius: 12px;
+    padding: 30px 30px 20px;
+    z-index: 10000;
+    width: 780px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    animation: flareIn 0.4s ease;
+  }
+  
+  @keyframes flareIn {
+    from {
+      transform: translate(-50%, -50%) scale(0.85);
+      opacity: 0;
+    }
+    to {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+  }
+  
+  #confirm-modal .popup-left,
+  #confirm-modal .popup-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #popup-img {
+    width: 220px;
+    height: 310px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #ff3d00, 0 0 60px #ff6e40;
+  }
+  
+  #popup-name {
+    font-size: 24px;
+    color: #ff3d00;
+    text-shadow: 0 0 10px #ff3d00aa;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  #popup-bio {
+    color: #ddd;
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 0 10px;
+  }
+  
+  .bars {
+    width: 100%;
+    max-width: 220px;
+  }
+  
+  .bars p {
+    text-align: left;
+    font-size: 13px;
+    margin-bottom: 5px;
+    color: #ccc;
+  }
+  
+  .bar {
+    height: 8px;
+    background: #ff3d00;
+    box-shadow: 0 0 5px #ff3d00aa;
+    border-radius: 4px;
+    transition: width 0.4s ease;
+    margin-bottom: 14px;
+  }
+  
+  #popup-start {
+    margin-top: 15px;
+    padding: 10px 22px;
+    font-size: 14px;
+    font-weight: bold;
+    background: #ff3d00;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px #ff3d00aa;
+  }
+  
+  #popup-start:hover {
+    background: #ff5722;
+    transform: scale(1.06);
+    box-shadow: 0 0 18px #ff6e40;
+  }
+  
+  #popup-close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 20px;
+    color: #ff3d00;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+  
+  #popup-close:hover {
+    color: #fff;
+    transform: scale(1.2);
+  }
+  
