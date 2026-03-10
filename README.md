@@ -19,11 +19,21 @@
 
 Teaser:
 
+
+
+
+
 <div align="center">
-  <video src="https://github.com/RealSagarBhandari/PureRage_Game_Public/blob/main/assets/teaser.mp4?raw=true" width="100%" autoplay muted loop></video>
-  
- 
+  <video src="https://github.com/user-attachments/assets/a15e25f0-8edb-4aa5-906b-7c7eac3c51be" width="100%" autoplay muted loop playsinline></video>
 </div>
+
+
+
+
+
+
+
+### Still might be live: [PURE RAGE](https://turn-based-battle-fqckckgve8bsa3ha.centralus-01.azurewebsites.net/)
 
 
 ##  Overview
