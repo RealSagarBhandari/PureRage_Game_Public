@@ -22,9 +22,7 @@ Teaser:
 <div align="center">
   <video src="https://github.com/RealSagarBhandari/PureRage_Game_Public/blob/main/assets/teaser.mp4?raw=true" width="100%" autoplay muted loop></video>
   
-  <p align="center">
-    <strong>A physics-driven 2D combat experience built with a focus on modular architecture and fluid state-management.</strong>
-  </p>
+ 
 </div>
 
 
