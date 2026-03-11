@@ -104,8 +104,8 @@ PureRage/
 Clone the repository and spin up your environment:
 
 ```bash
-git clone https://github.com/YourUsername/PureRage.git
-cd PureRage
+git clone [https://github.com/YourUsername/PureRage.git](https://github.com/RealSagarBhandari/PureRage_Game_Public)
+cd PureRage_Game_Public
 
 # Set up a virtual environment (Recommended)
 python -m venv .venv
